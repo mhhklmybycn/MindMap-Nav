@@ -1,0 +1,39 @@
+/* ==========================================================================
+   前台样式模板：紫夜星云（violet）
+   ------------------------------------------------------------------
+   在 front.css 之后加载，只覆盖 CSS 变量与少量背景规则。
+   选择器与默认模板保持一致，通过层叠顺序生效，无需更高优先级。
+   ========================================================================== */
+
+:root {
+    --front-bg: #150a24;
+    --ink: #f6f0ff;
+    --muted: #a695c7;
+    --muted-2: #7d6b9e;
+    --line: rgba(178, 148, 245, 0.18);
+    --line-strong: rgba(178, 148, 245, 0.34);
+    --card: rgba(29, 16, 48, 0.78);
+    --card-hover: rgba(40, 23, 64, 0.92);
+}
+
+body {
+    background:
+        radial-gradient(circle at 16% 12%, rgba(139, 92, 246, 0.22), transparent 38%),
+        radial-gradient(circle at 86% 84%, rgba(236, 72, 153, 0.18), transparent 44%),
+        linear-gradient(145deg, #1a0d2e 0%, #150a24 52%, #0d0616 100%);
+}
+
+/* 未上传背景图时：四周压角染成深紫色，保持文字可读 */
+body:not(.has-background) .site-overlay {
+    background:
+        radial-gradient(circle at 50% 45%, rgba(32, 16, 54, 0), rgba(13, 6, 22, 0.78) 78%),
+        linear-gradient(180deg, rgba(16, 7, 28, 0.2), rgba(13, 6, 22, 0.62));
+}
+
+/* 颗粒纹理换用淡紫色斑点 */
+.site-grain {
+    background-image:
+        radial-gradient(rgba(196, 168, 255, 0.14) 0.5px, transparent 0.5px),
+        linear-gradient(rgba(178, 148, 245, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(178, 148, 245, 0.045) 1px, transparent 1px);
+}

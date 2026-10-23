@@ -1,0 +1,40 @@
+/* ==========================================================================
+   前台样式模板：清晨浅灰（light）
+   ------------------------------------------------------------------
+   在 front.css 之后加载，只覆盖 CSS 变量与少量背景规则。
+   选择器与默认模板保持一致，通过层叠顺序生效，无需更高优先级。
+   ========================================================================== */
+
+:root {
+    --front-bg: #f4f6f8;
+    --ink: #16232e;
+    --muted: #5b6b7a;
+    --muted-2: #8494a3;
+    --line: rgba(22, 35, 46, 0.1);
+    --line-strong: rgba(22, 35, 46, 0.2);
+    --card: rgba(255, 255, 255, 0.88);
+    --card-hover: #ffffff;
+}
+
+body {
+    background:
+        radial-gradient(circle at 16% 12%, rgba(64, 158, 255, 0.14), transparent 38%),
+        radial-gradient(circle at 86% 84%, rgba(73, 230, 179, 0.16), transparent 44%),
+        linear-gradient(145deg, #ffffff 0%, #f4f6f8 52%, #e9edf1 100%);
+}
+
+/* 未上传背景图时：四周压角由深色改为浅色雾化 */
+body:not(.has-background) .site-overlay {
+    background:
+        radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0), rgba(217, 226, 234, 0.55) 82%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(226, 232, 238, 0.42));
+}
+
+/* 颗粒纹理换用深色斑点，浅色底上保持可见 */
+.site-grain {
+    opacity: 0.5;
+    background-image:
+        radial-gradient(rgba(22, 35, 46, 0.1) 0.5px, transparent 0.5px),
+        linear-gradient(rgba(22, 35, 46, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(22, 35, 46, 0.04) 1px, transparent 1px);
+}
